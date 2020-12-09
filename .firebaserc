@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mit-fertigation": {
+      "hosting": {
+        "syarilFet": [
+          "mit-fertigation"
+        ]
+      }
+    }
+  }
+}
