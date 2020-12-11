@@ -69,6 +69,13 @@
     margin-right: 8px;
   }
 
+  .card.button {
+    height: 24px;
+    width: 60px;
+    margin: auto;
+    margin-right: 5px;
+  }
+
   .card svg.material-icons path {
     fill: #888;
   }
@@ -98,6 +105,11 @@
 
   .card-container .card:not(:last-child) {
     margin-right: 0;
+  }
+
+  .card.card-display {
+    height: 32px;
+    width: 180px;
   }
 
   .card.card-small {

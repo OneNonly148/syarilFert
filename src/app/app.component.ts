@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 })
 export class AppComponent {
   title = 'Fertigation IoT';
+  temperature=32.5;
   constructor(public auth: AngularFireAuth) {
   }
   login() {
