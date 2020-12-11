@@ -1,0 +1,48 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- Toolbar -->
+  
+  <div class="content" role="main">
+    <div class="card-container">
+      <div class="card card-display">
+        <span style="text-align: center; font-weight: bold;">Temperature<br>{{this.temperature}}</span>
+      </div>
+      <div class="card card-display">
+        <span style="text-align: center; font-weight: bold;">Humidity<br>{{this.humidity}}</span>
+      </div>
+      <div class="card card-display">
+        <span style="text-align: center; font-weight: bold;">EC Value<br>{{this.temperature}}</span>
+      </div>
+      <div class="card card-display">
+        <span style="text-align: center; font-weight: bold;">pH Value<br>{{this.temperature}}</span>
+      </div>
+    </div>
+  </div>
+  
+    <div class="card-container">
+      <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <span>A Dispenser</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+        <span>B Dispenser</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
+        <span>Motor</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
+        <span>Valve</span>
+      </div>
+    </div>
+
+
+  
