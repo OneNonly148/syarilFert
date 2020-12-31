@@ -22,6 +22,8 @@ export class HomePageComponent implements OnInit {
   btnStat2=false;
   btnStat3=false;
   btnStat4=false;
+  btnStat7=false;
+  btnStat8=false;
   selection = {
     value : '',
   };
@@ -88,6 +90,26 @@ export class HomePageComponent implements OnInit {
             this.btnStat4 = !this.btnStat4; 
           }
           firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat4 });
+          break;
+        case 7:
+            if(this.btnStat7){
+              console.log('off');
+              this.btnStat7 = !this.btnStat7; 
+            }else{
+              console.log('on');
+              this.btnStat7 = !this.btnStat7; 
+            }
+            firebase.database().ref('/fertigation/btn').update({ d7: this.btnStat7 });
+            break;
+        case 8:
+          if(this.btnStat8){
+            console.log('off');
+            this.btnStat8 = !this.btnStat8; 
+          }else{
+            console.log('on');
+            this.btnStat8 = !this.btnStat8; 
+          }
+          firebase.database().ref('/fertigation/btn').update({ d8: this.btnStat8 });
           break;
     }
   }
