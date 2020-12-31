@@ -117,6 +117,18 @@
     width: 168px;
   }
 
+  .card.card-small-off {
+    height: 16px;
+    width: 168px;
+    background-color: red;
+  }
+
+  .card.card-small-on {
+    height: 16px;
+    width: 168px;
+    background-color: green;
+  }
+
   .card-container .card:not(.highlight-card) {
     cursor: pointer;
   }
