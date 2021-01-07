@@ -22,11 +22,8 @@ export class HomePageComponent implements OnInit {
   btnStat2=false;
   btnStat3=false;
   btnStat4=false;
-<<<<<<< HEAD
   btnStat5=false;
   btnStat6=false;
-=======
->>>>>>> 60fefcf7226e21f93d54993b604c15013bbab687
   btnStat7=false;
   btnStat8=false;
   selection = {
