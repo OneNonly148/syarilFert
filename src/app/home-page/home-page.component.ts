@@ -22,8 +22,11 @@ export class HomePageComponent implements OnInit {
   btnStat2=false;
   btnStat3=false;
   btnStat4=false;
+<<<<<<< HEAD
   btnStat5=false;
   btnStat6=false;
+=======
+>>>>>>> 60fefcf7226e21f93d54993b604c15013bbab687
   btnStat7=false;
   btnStat8=false;
   selection = {
@@ -90,50 +93,30 @@ export class HomePageComponent implements OnInit {
         break;
       case 4:
         if(this.btnStat4){
-          console.log('4 off');
+          console.log('off');
           this.btnStat4 = !this.btnStat4;
         }else{
-          console.log('4 on');
+          console.log('on');
           this.btnStat4 = !this.btnStat4;
         }
         firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat4 });
         break;
-      case 5:
-        if(this.btnStat5){
-          console.log('5 off');
-          this.btnStat5 = !this.btnStat5;
-        }else{
-          console.log('5 on');
-          this.btnStat5 = !this.btnStat5;
-        }
-        firebase.database().ref('/fertigation/btn').update({ d5: this.btnStat5 });
-        break;
-      case 6:
-        if(this.btnStat6){
-          console.log('6 off');
-          this.btnStat6 = !this.btnStat6;
-        }else{
-          console.log('6 on');
-          this.btnStat6 = !this.btnStat6;
-        }
-        firebase.database().ref('/fertigation/btn').update({ d6: this.btnStat6 });
-        break;
       case 7:
-        if(this.btnStat7){
-          console.log('7 off');
-          this.btnStat7 = !this.btnStat7;
-        }else{
-          console.log('7 on');
-          this.btnStat7 = !this.btnStat7;
-        }
-        firebase.database().ref('/fertigation/btn').update({ d7: this.btnStat7 });
-        break;
+          if(this.btnStat7){
+            console.log('off');
+            this.btnStat7 = !this.btnStat7;
+          }else{
+            console.log('on');
+            this.btnStat7 = !this.btnStat7;
+          }
+          firebase.database().ref('/fertigation/btn').update({ d7: this.btnStat7 });
+          break;
       case 8:
         if(this.btnStat8){
-          console.log('8 off');
+          console.log('off');
           this.btnStat8 = !this.btnStat8;
         }else{
-          console.log('8 on');
+          console.log('on');
           this.btnStat8 = !this.btnStat8;
         }
         firebase.database().ref('/fertigation/btn').update({ d8: this.btnStat8 });
