@@ -98,6 +98,26 @@ export class HomePageComponent implements OnInit {
         }
         firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat4 });
         break;
+      case 5:
+        if(this.btnStat5){
+          console.log('off');
+          this.btnStat5 = !this.btnStat5;
+        }else{
+          console.log('on');
+          this.btnStat5 = !this.btnStat5;
+        }
+        firebase.database().ref('/fertigation/btn').update({ d5: this.btnStat5 });
+        break;
+      case 6:
+        if(this.btnStat6){
+          console.log('off');
+          this.btnStat6 = !this.btnStat6;
+        }else{
+          console.log('on');
+          this.btnStat6 = !this.btnStat6;
+        }
+        firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat6 });
+        break;
       case 7:
           if(this.btnStat7){
             console.log('off');
