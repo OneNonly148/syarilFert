@@ -1,83 +1,89 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<!-- Toolbar -->
-  
-  <div class="content" role="main">
-    <div class="card-container">
-      <div class="card card-display">
-        <span style="text-align: center; font-weight: bold;">Temperature<br>{{this.data[4]}}</span>
-      </div>
-      <div class="card card-display">
-        <span style="text-align: center; font-weight: bold;">Humidity<br>{{this.data[2]}}</span>
-      </div>
-      <div class="card card-display">
-        <span style="text-align: center; font-weight: bold;">EC Value<br>{{this.data[1]}}</span>
-      </div>
-      <div class="card card-display">
-        <span style="text-align: center; font-weight: bold;">pH Value<br>{{this.data[3]}}</span>
-      </div>
-    </div>
-  </div>
-  
+<div class="content" role="main">
   <div class="card-container">
-    <div *ngIf="btnStat1==true; else elseBlock" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(1)">Dispenser is on</span>
+    <div class="card card-display">
+      <span style="text-align: center; font-weight: bold;">Temperature<br>{{this.data[4]}}</span>
     </div>
-    <ng-template #elseBlock>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(1)">Dispenser is off</span>
-      </div>
-    </ng-template>
-
-    <div *ngIf="btnStat2==true; else elseBlock2" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(2)">Dispenser 2 is on</span>
+    <div class="card card-display">
+      <span style="text-align: center; font-weight: bold;">Humidity<br>{{this.data[2]}}</span>
     </div>
-    <ng-template #elseBlock2>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(2)">Dispenser 2 is off</span>
-      </div>
-    </ng-template>
-
-    <div *ngIf="btnStat3==true; else elseBlock3" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(3)">Dispenser 3 is on</span>
+    <div class="card card-display">
+      <span style="text-align: center; font-weight: bold;">EC Value<br>{{this.data[1]}}</span>
     </div>
-    <ng-template #elseBlock3>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(3)">Dispenser 3 is off</span>
-      </div>
-    </ng-template>
-    <div *ngIf="btnStat4==true; else elseBlock4" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(4)">Dispenser 4 is on</span>
+    <div class="card card-display">
+      <span style="text-align: center; font-weight: bold;">pH Value<br>{{this.data[3]}}</span>
     </div>
-    <ng-template #elseBlock4>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(4)">Dispenser 4 is off</span>
-      </div>
-    </ng-template>
-    <div *ngIf="btnStat7==true; else elseBlock7" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(7)">motor 1 is on</span>
-    </div>
-    <ng-template #elseBlock7>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(7)">Motor 1 is off</span>
-      </div>
-    </ng-template>  
-    <div *ngIf="btnStat8==true; else elseBlock8" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(8)">motor 2 is on</span>
-    </div>
-    <ng-template #elseBlock8>
-      <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-        <span (click)="buttonP(8)">Motor 2 is off</span>
-      </div>
-    </ng-template>  
   </div>
+</div>
+
+<div class="card-container">
+  <div *ngIf="btnStat1==true; else elseBlock" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(1)">Dispenser is on</span>
+  </div>
+  <ng-template #elseBlock>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(1)">Dispenser is off</span>
+    </div>
+  </ng-template>
+
+  <div *ngIf="btnStat2==true; else elseBlock2" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(2)">Dispenser 2 is on</span>
+  </div>
+  <ng-template #elseBlock2>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(2)">Dispenser 2 is off</span>
+    </div>
+  </ng-template>
+
+  <div *ngIf="btnStat3==true; else elseBlock3" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(3)">Dispenser 3 is on</span>
+  </div>
+  <ng-template #elseBlock3>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(3)">Dispenser 3 is off</span>
+    </div>
+  </ng-template>
+  <div *ngIf="btnStat4==true; else elseBlock4" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(4)">Dispenser 4 is on</span>
+  </div>
+  <ng-template #elseBlock4>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(4)">Dispenser 4 is off</span>
+    </div>
+  </ng-template>
+</div>
+<div class="card-container">
+  <div *ngIf="btnStat5==true; else elseBlock5" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(5)">Dispenser 5 is on</span>
+  </div>
+  <ng-template #elseBlock5>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(5)">Dispenser 5 is off</span>
+    </div>
+  </ng-template>
+  <div *ngIf="btnStat6==true; else elseBlock6" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(6)">Dispenser 6 is on</span>
+  </div>
+  <ng-template #elseBlock6>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(6)">Dispenser 6 is off</span>
+    </div>
+  </ng-template>
+  <div *ngIf="btnStat7==true; else elseBlock7" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(7)">Dispenser 7 is on</span>
+  </div>
+  <ng-template #elseBlock7>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(7)">Dispenser 7 is off</span>
+    </div>
+  </ng-template>
+  <div *ngIf="btnStat8==true; else elseBlock8" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
+    <span (click)="buttonP(8)">Dispenser 8 is on</span>
+  </div>
+  <ng-template #elseBlock8>
+    <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
+      <span (click)="buttonP(8)">Dispenser 8 is off</span>
+    </div>
+  </ng-template>
+</div>
 
 
-  

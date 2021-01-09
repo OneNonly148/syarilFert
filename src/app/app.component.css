@@ -69,11 +69,10 @@
     margin-right: 8px;
   }
 
-  .card.button {
-    height: 24px;
-    width: 60px;
+  #button {
+    width: 8%;
     margin: auto;
-    margin-right: 5px;
+    margin-right: 1%;
   }
 
   .card svg.material-icons path {
@@ -271,8 +270,12 @@
 
 
   /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-
+  @media screen and (max-width: 770px) {
+    #button {
+      width: 20%;
+      margin: auto;
+      margin-right: 2%;
+    }
     .card-container > *:not(.circle-link) ,
     .terminal {
       width: 100%;
@@ -297,5 +300,10 @@
     svg#rocket-smoke {
       display: none;
       visibility: hidden;
+    }
+    #button {
+      width: 20%;
+      margin: auto;
+      margin-right: 2%;
     }
   }
