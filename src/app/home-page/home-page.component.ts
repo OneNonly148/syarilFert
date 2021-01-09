@@ -16,8 +16,8 @@ export class HomePageComponent implements OnInit {
   data:any = [];
   btns: Observable<any>;
   btn:any = [];
-  temperature=333;
-  humidity= 22;
+  temperature=0;
+  humidity= 0;
   btnStat1=false;
   btnStat2=false;
   btnStat3=false;
