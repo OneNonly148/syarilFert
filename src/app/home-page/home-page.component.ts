@@ -16,8 +16,8 @@ export class HomePageComponent implements OnInit {
   data:any = [];
   btns: Observable<any>;
   btn:any = [];
-  temperature=333;
-  humidity= 22;
+  temperature=0;
+  humidity= 0;
   btnStat1=false;
   btnStat2=false;
   btnStat3=false;
@@ -97,16 +97,16 @@ export class HomePageComponent implements OnInit {
         }
         firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat4 });
         break;
-        case 5:
-          if(this.btnStat5){
-            console.log('off');
-            this.btnStat5 = !this.btnStat5;
-          }else{
-            console.log('on');
-            this.btnStat5 = !this.btnStat5;
-          }
-          firebase.database().ref('/fertigation/btn').update({ d7: this.btnStat7 });
-          break;
+      case 5:
+        if(this.btnStat5){
+          console.log('off');
+          this.btnStat5 = !this.btnStat5;
+        }else{
+          console.log('on');
+          this.btnStat5 = !this.btnStat5;
+        }
+        firebase.database().ref('/fertigation/btn').update({ d5: this.btnStat5 });
+        break;
       case 6:
         if(this.btnStat6){
           console.log('off');
