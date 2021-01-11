@@ -58,10 +58,9 @@ export class HomePageComponent implements OnInit {
     console.log(btn);
     switch(btn){
       case 1:
-        if(this.btnStat1 ){
+        if(this.btnStat1){
           console.log('1 off');
           this.btnStat1 = !this.btnStat1;
-
         }else{
           console.log('1 on');
           this.btnStat1 = !this.btnStat1;
@@ -97,6 +96,26 @@ export class HomePageComponent implements OnInit {
           this.btnStat4 = !this.btnStat4;
         }
         firebase.database().ref('/fertigation/btn').update({ d4: this.btnStat4 });
+        break;
+        case 5:
+          if(this.btnStat5){
+            console.log('off');
+            this.btnStat5 = !this.btnStat5;
+          }else{
+            console.log('on');
+            this.btnStat5 = !this.btnStat5;
+          }
+          firebase.database().ref('/fertigation/btn').update({ d7: this.btnStat7 });
+          break;
+      case 6:
+        if(this.btnStat6){
+          console.log('off');
+          this.btnStat6 = !this.btnStat6;
+        }else{
+          console.log('on');
+          this.btnStat6 = !this.btnStat6;
+        }
+        firebase.database().ref('/fertigation/btn').update({ d6: this.btnStat6 });
         break;
       case 7:
           if(this.btnStat7){
