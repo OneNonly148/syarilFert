@@ -17,12 +17,10 @@
 </div>
 
 <div class="card-container">
-  <div *ngIf="btnStat1==true; else elseBlock" class="card card-small-on" (click)="selection.value = 'component'" tabindex="0">
-    <span (click)="buttonP(1)">Dispenser is on</span>
-  </div>
+  <button type="button" class="btn btn-success" *ngIf="btnStat1==true; else elseBlock" (click)="buttonP(1)" style="width: 80%;">Dispenser 1 is on</button>
   <ng-template #elseBlock>
     <div class="card card-small-off" (click)="selection.value = 'component'" tabindex="0">
-      <span (click)="buttonP(1)">Dispenser is off</span>
+      <span (click)="buttonP(1)">Dispenser 1 is off</span>
     </div>
   </ng-template>
 
@@ -85,6 +83,9 @@
       <span (click)="buttonP(8)">Dispenser 8 is off</span>
     </div>
   </ng-template>
+</div>
+<div class="content">
+  <img src="../assets/IMG_20210218_143107_812.jpeg " width="500px" height="280px"/>
 </div>
 
 
