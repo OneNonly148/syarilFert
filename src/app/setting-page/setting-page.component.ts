@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import firebase from 'firebase/app';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-setting-page',
@@ -19,7 +21,7 @@ export class SettingPageComponent implements OnInit {
   btnName7: string = "Dispenser 7";
   btnName8: string = "Dispenser 8";
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, db: AngularFireDatabase) { }
 
   buttonEdit(content:any, btnNum:number) {
     this.btnNumber = btnNum;
@@ -29,6 +31,7 @@ export class SettingPageComponent implements OnInit {
       switch(this.btnNumber){
         case 1:
           this.btnName1 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn1: this.btnName1 });
           break;
         case 2:
           this.btnName2 = this.buttonName;
@@ -68,5 +71,17 @@ export class SettingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let btnNames = firebase.database().ref('/fertigation/config');
+    btnNames.on('value', (snapshot) => {
+      const data = snapshot.val();
+      this.btnName1 = data.btn1;
+      this.btnName2 = data.btn2;
+      this.btnName3 = data.btn3;
+      this.btnName4 = data.btn4;
+      this.btnName5 = data.btn5;
+      this.btnName6 = data.btn6;
+      this.btnName7 = data.btn7;
+      this.btnName8 = data.btn8;
+    });
   }
 }

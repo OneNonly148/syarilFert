@@ -107,9 +107,26 @@
     line-height: 24px;
   }
 
+  .readout{
+    margin: 10px;
+    padding: 5px 20px;
+    text-align: center; 
+    font-weight: bold;
+  }
+
+  .interface{
+    margin: 10px;
+    padding: 10px 20px;
+  }
+
   .card-container .card:not(:last-child) {
     margin-right: 0;
   }
+
+  .card.card-interface {
+    height: 80px;
+    width: 180px;
+  } 
 
   .card.card-display {
     height: 32px;

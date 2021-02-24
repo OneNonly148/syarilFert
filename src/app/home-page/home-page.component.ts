@@ -27,6 +27,14 @@ export class HomePageComponent implements OnInit {
   btnStat6=false;
   btnStat7=false;
   btnStat8=false;
+  btnName1: string = "Dispenser 1";
+  btnName2: string = "Dispenser 2";
+  btnName3: string = "Dispenser 3";
+  btnName4: string = "Dispenser 4";
+  btnName5: string = "Dispenser 5";
+  btnName6: string = "Dispenser 6";
+  btnName7: string = "Dispenser 7";
+  btnName8: string = "Dispenser 8";
   selection = {
     value : '',
   };
@@ -50,11 +58,12 @@ export class HomePageComponent implements OnInit {
       this.btnStat7=this.btn[6];
       this.btnStat8=this.btn[7];
     })
-
   }
+
   login() {
     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
   buttonP(btn:number) {
     console.log(btn);
     switch(btn){
@@ -141,7 +150,17 @@ export class HomePageComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-
+    let btnNames = firebase.database().ref('/fertigation/config');
+    btnNames.on('value', (snapshot) => {
+      const data = snapshot.val();
+      this.btnName1 = data.btn1;
+      this.btnName2 = data.btn2;
+      this.btnName3 = data.btn3;
+      this.btnName4 = data.btn4;
+      this.btnName5 = data.btn5;
+      this.btnName6 = data.btn6;
+      this.btnName7 = data.btn7;
+      this.btnName8 = data.btn8;
+    });
   }
-
 }
