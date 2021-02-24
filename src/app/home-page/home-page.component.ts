@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

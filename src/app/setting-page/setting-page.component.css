@@ -60,6 +60,32 @@
     align-items: center;
   }
 
+  .main{
+    margin: 80px 10px;
+  }
+
+  .flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+    justify-content: center;
+  }
+
+  .flex-container #main {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 300px;
+  }
+
+  .flex-container #sub {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 200px;
+  }
+
   svg.material-icons {
     height: 24px;
     width: auto;
@@ -115,6 +141,19 @@
   .card.card-small {
     height: 16px;
     width: 168px;
+  }
+
+  .card.card-small-off {
+    height: 16px;
+    width: 168px;
+    background-color: red;
+  }
+
+  .card.card-small-on {
+    height: 16px;
+    width: 168px;
+    background-color: green;
+    font-size: 18px;
   }
 
   .card-container .card:not(.highlight-card) {

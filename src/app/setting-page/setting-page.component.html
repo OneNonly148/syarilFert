@@ -1,3 +1,39 @@
-<div class="content" role="main">
-    <p>setting-page works!</p>
+<div class="main flex-container">
+  <div id="main">
+    <div style="text-align: center; ">
+      Edit button label
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,1)" style="width: 80%;">{{ btnName1 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,2)" style="width: 80%;">{{ btnName2 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,3)" style="width: 80%;">{{ btnName3 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,4)" style="width: 80%;">{{ btnName4 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,5)" style="width: 80%;">{{ btnName5 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,6)" style="width: 80%;">{{ btnName6 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,7)" style="width: 80%;">{{ btnName7 }} is on</button>
+      <button type="button" class="btn btn-primary" (click)="buttonEdit(content,8)" style="width: 80%;">{{ btnName8 }} is on</button>
+    </div>
+  </div>
+  <div id="main">Rain sensor</div>
+  <div id="main">Water level</div>
+  <div id="main">pH sensor</div>
+  <div id="main">EC sensor</div>
+</div>
+
+<div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit button number {{ btnNumber }}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="buttonName">Enter button name</label>
+        <input type="text" class="form-control" [(ngModel)]="buttonName" aria-describedby="buttonNameEntry">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
 </div>
