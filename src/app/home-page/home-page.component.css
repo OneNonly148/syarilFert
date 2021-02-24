@@ -51,6 +51,10 @@
     opacity: 0.8;
   }
 
+  .body{
+    height: 100%;
+  }
+
   .content {
     display: flex;
     margin: 82px auto 32px;
