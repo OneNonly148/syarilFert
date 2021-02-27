@@ -6,11 +6,34 @@
   />
   <span routerLink="">Fertigation monitoring</span>
   <div class="spacer"></div>
+  <button *ngIf="!dispStat; else toDisable" type="button" class="btn btn-danger" (click)="autoDisp(autoDispCont)">Auto Dispense</button>
+  <ng-template #toDisable>
+    <button type="button" class="btn btn-success" (click)="disbDisp()">Auto Dispense</button>
+  </ng-template>
   <button class="card" id="button" (click)="setting()">Settings</button>
   <button class="card" id="button"(click)="logout()">Logout</button>
 </div>
 <router-outlet></router-outlet>
 
+<div>
+  <ng-template #autoDispCont let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit button number</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="buttonName">Enter button name</label>
+        <input type="text" class="form-control" [(ngModel)]="dispNumber" aria-describedby="buttonNameEntry">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+</div>
 <!-- <div>
   <img src="../assets/IMG_20210218_143107_812.jpg"/>
 </div> -->
