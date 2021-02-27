@@ -35,24 +35,31 @@ export class SettingPageComponent implements OnInit {
           break;
         case 2:
           this.btnName2 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn2: this.btnName2 });
           break;
         case 3:
           this.btnName3 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn3: this.btnName3 }); 
           break;
         case 4:
           this.btnName4 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn4: this.btnName4 });  
           break;
         case 5:
           this.btnName5 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn5: this.btnName5 });    
           break;
         case 6:
           this.btnName6 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn6: this.btnName6 });
           break;
         case 7:
           this.btnName7 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn7: this.btnName7 }); 
           break;
         case 8:
           this.btnName8 = this.buttonName;
+          firebase.database().ref('/fertigation/config').update({ btn8: this.btnName8 });
           break;
       };
     }, (reason) => {
