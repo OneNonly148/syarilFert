@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/syarilFet",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

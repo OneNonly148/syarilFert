@@ -39,7 +39,6 @@ export class HomePageComponent implements OnInit {
     value : '',
   };
   constructor(public auth: AngularFireAuth,db: AngularFireDatabase,private router : Router) {
-
     this.datas = db.list('/fertigation/location').valueChanges();
     this.datas.forEach(x => {
       this.data = x;

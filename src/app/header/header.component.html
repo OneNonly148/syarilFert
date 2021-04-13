@@ -1,0 +1,36 @@
+<div class="toolbar" role="banner">
+    <img routerLink=""
+      width="40"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    />
+    <span routerLink="">Fertigation monitoring</span>
+    <div class="spacer"></div>
+    <button *ngIf="!dispStat; else toDisable" type="button" class="btn btn-danger" (click)="autoDisp(autoDispCont)">Auto Dispense</button>
+    <ng-template #toDisable>
+      <button type="button" class="btn btn-success" (click)="disbDisp()">Auto Dispense</button>
+    </ng-template>
+    <button class="card" id="button" (click)="setting()">Settings</button>
+    <button class="card" id="button"(click)="logout()">Logout</button>
+  </div>
+  <div>
+    <ng-template #autoDispCont let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Enter dispenser value</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="buttonName">A Fertilizer value</label>
+          <input type="text" class="form-control" [(ngModel)]="dispANumber" aria-describedby="buttonNameEntry">
+          <label for="buttonName">B Fertilizer value</label>
+          <input type="text" class="form-control" [(ngModel)]="dispBNumber" aria-describedby="buttonNameEntry">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      </div>
+    </ng-template>
+  </div>

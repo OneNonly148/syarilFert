@@ -11,12 +11,14 @@ import { SettingPageComponent } from './setting-page/setting-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SettingPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
