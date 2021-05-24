@@ -12,13 +12,15 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
+import { DatalogComponent } from './datalog/datalog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SettingPageComponent,
     HomePageComponent,
-    HeaderComponent
+    HeaderComponent,
+    DatalogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { HeaderComponent } from './header/header.component';
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
       {path: 'setting', component: SettingPageComponent},
+      {path: 'datalog', component: DatalogComponent}
     ]),
     NgbModule,
     FormsModule,

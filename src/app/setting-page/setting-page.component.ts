@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import firebase from 'firebase/app';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setting-page',
@@ -20,8 +21,10 @@ export class SettingPageComponent implements OnInit {
   btnName6: string = "Dispenser 6";
   btnName7: string = "Dispenser 7";
   btnName8: string = "Dispenser 8";
+  dateNumber:number = 0;
+  dateArr:number[] = [1,2,3,4,5];
 
-  constructor(private modalService: NgbModal, db: AngularFireDatabase) { }
+  constructor(private modalService: NgbModal, db: AngularFireDatabase, public router: Router) { }
 
   buttonEdit(content:any, btnNum:number) {
     this.btnNumber = btnNum;
@@ -65,6 +68,20 @@ export class SettingPageComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+  
+  schedEdit(content:any, dateNum:number) {
+    this.dateNumber = dateNum;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+      console.log(this.buttonName);
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  toDatalog(){
+    this.router.navigate(['datalog']);
   }
 
   private getDismissReason(reason: any): string {

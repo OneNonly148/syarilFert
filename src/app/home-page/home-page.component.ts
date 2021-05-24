@@ -148,6 +148,11 @@ export class HomePageComponent implements OnInit {
         break;
     }
   }
+
+  toDatalog(){
+    this.router.navigate(['datalog']);
+  }
+
   ngOnInit(): void {
     let btnNames = firebase.database().ref('/fertigation/config');
     btnNames.on('value', (snapshot) => {
