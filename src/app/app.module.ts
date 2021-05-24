@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -43,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
+      {path: 'dashboard', component: HomePageComponent},
       {path: 'setting', component: SettingPageComponent},
       {path: 'datalog', component: DatalogComponent}
     ]),
@@ -62,7 +62,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [],
