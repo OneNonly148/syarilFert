@@ -55,7 +55,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // MatFormFieldModule,
     // MatTableModule,
     // MatProgressSpinnerModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
