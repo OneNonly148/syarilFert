@@ -39,14 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    RouterModule.forRoot([
-      {path: '', component: HomePageComponent},
-      {path: 'dashboard', component: HomePageComponent},
-      {path: 'setting', component: SettingPageComponent},
-      {path: 'datalog', component: DatalogComponent}
-    ]),
-    NgbModule,
+    NgModule,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -63,6 +56,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    RouterModule.forRoot([
+      {path: '', component: HomePageComponent},
+      {path: 'dashboard', component: HomePageComponent},
+      {path: 'setting', component: SettingPageComponent},
+      {path: 'datalog', component: DatalogComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
