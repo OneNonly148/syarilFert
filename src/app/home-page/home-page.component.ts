@@ -42,12 +42,12 @@ export class HomePageComponent implements OnInit {
     this.datas = db.list('/fertigation/location').valueChanges();
     this.datas.forEach(x => {
       this.data = x;
-      console.log(x)
+      // console.log(x)
     })
     this.btns = db.list('/fertigation/btn').valueChanges();
     this.btns.forEach(x => {
       this.btn = x;
-      console.log(x);
+      // console.log(x);
       this.btnStat1=this.btn[0];
       this.btnStat2=this.btn[1];
       this.btnStat3=this.btn[2];
@@ -64,7 +64,7 @@ export class HomePageComponent implements OnInit {
   }
 
   buttonP(btn:number) {
-    console.log(btn);
+    // console.log(btn);
     switch(btn){
       case 1:
         if(this.btnStat1){

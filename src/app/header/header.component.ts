@@ -24,12 +24,10 @@ export class HeaderComponent implements OnInit{
     this.datas = db.list('/fertigation/location').valueChanges();
     this.datas.forEach(x => {
       this.data = x;
-      console.log(x)
     })
     this.btns = db.list('/fertigation/btn').valueChanges();
     this.btns.forEach(x => {
       this.btn = x;
-      console.log(x);
       this.dispStat=this.btn[8];
     })
   }
@@ -43,7 +41,7 @@ export class HeaderComponent implements OnInit{
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `${result}`;
       this.dispStat = true;
-      console.log(this.closeResult + ' ' + this.dispANumber + ' ' + this.dispBNumber);
+      // console.log(this.closeResult + ' ' + this.dispANumber + ' ' + this.dispBNumber);
       if(this.closeResult === 'Save click'){
         console.log('Saving data');
         firebase.database().ref('/fertigation/btn').update({ d9: true, d91: this.dispANumber, d92: this.dispBNumber });

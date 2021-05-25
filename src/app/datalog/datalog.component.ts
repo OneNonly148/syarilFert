@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DbQueryService } from '../db-query.service';
 
 export interface tData {
-  time: number;
-  temp: number;
-  humd: number;
-  irrd: number;
-  power: number;
+  Timestamp: number;
+  Date: any;
+  Time: string;
+  tem: number;
+  hum: number;
+  ec: number;
+  pH: number;
 }
 
 @Component({
@@ -21,12 +24,30 @@ export class DatalogComponent implements OnInit {
   });
   downReady = false;
   tableData: Array<tData> = [];
-  displayedColumns: string[] = ['time', 'temp', 'humd', 'irrd', 'power'];
+  displayedColumns: string[] = ['time', 'tem', 'hum', 'ec', 'pH'];
 
-  constructor() { }
+  constructor(private datalog: DbQueryService,) { }
 
   getTable(){
     console.log('Getting table');
+    this.downReady = false;
+    if(this.range.value.start && this.range.value.end){
+      this.datalog.getDateTable(this.range.value.start, this.range.value.end);
+      const sub2 = this.datalog.tableDate$.subscribe(value => {
+        console.log(value);
+        if(value.length>0){
+          console.log(value);
+          this.tableData=value;
+          this.downReady = true;
+        }
+        setTimeout(() => {
+          sub2.unsubscribe();
+          this.downReady = true;
+        }, 5000);
+      });
+    }else{
+      console.log('Invalid date');
+    }
   }
 
   getDownload(data: any){
@@ -34,6 +55,14 @@ export class DatalogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.datalog.getTable();
+    const sub1 = this.datalog.tableData$.subscribe(value => {
+      this.tableData=value;
+      setTimeout(() => {
+        sub1.unsubscribe();
+        this.downReady = true;
+      }, 5000);
+    });
   }
 
 }
