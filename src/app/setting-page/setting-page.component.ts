@@ -21,8 +21,13 @@ export class SettingPageComponent implements OnInit {
   btnName6: string = "Dispenser 6";
   btnName7: string = "Dispenser 7";
   btnName8: string = "Dispenser 8";
-  dateNumber:number = 0;
-  dateArr:number[] = [1,2,3,4,5];
+  dateRef: number = 0;
+  dateNumber:string = '';
+  schStatus: number[] = [1,0,0,0,0,0,0];
+  timeStart: number[] = [2300,2300,2300,2300,2300,2300,2300];
+  timeStartVal: number = 2300;
+  durationValue: number[] = [10,10,10,10,10,10,10];
+  durationValueVal: number = 10;
 
   constructor(private modalService: NgbModal, db: AngularFireDatabase, public router: Router) { }
 
@@ -71,10 +76,35 @@ export class SettingPageComponent implements OnInit {
   }
   
   schedEdit(content:any, dateNum:number) {
-    this.dateNumber = dateNum;
+    this.dateRef = dateNum-1;
+    switch (dateNum){
+      case 1:
+        this.dateNumber = 'Monday';
+        break;
+      case 2:
+        this.dateNumber = 'Tuesday';
+        break;
+      case 3:
+        this.dateNumber = 'Wednesday';
+        break;
+      case 4:
+        this.dateNumber = 'Thursday';
+        break;
+      case 5:
+        this.dateNumber = 'Friday';
+        break;
+      case 6:
+        this.dateNumber = 'Saturday';
+        break;
+      case 7:
+        this.dateNumber = 'Sunday';
+        break;
+    }
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
-      console.log(this.buttonName);
+      this.timeStart[this.dateRef]=this.timeStartVal;
+      this.durationValue[this.dateRef]=this.durationValueVal;
+      firebase.database().ref('/fertigation/schconfig').update({ schStatus: this.schStatus, timeStart: this.timeStart, durationValue: this.durationValue });
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
@@ -83,6 +113,18 @@ export class SettingPageComponent implements OnInit {
   toDatalog(){
     this.router.navigate(['datalog']);
   }
+
+  dataChange(data:string){
+    this.timeStartVal = parseInt(data);
+  }
+
+  schStat(state:number){
+    if(this.schStatus[state]){
+      this.schStatus[state] = 0;
+    }else{
+      this.schStatus[state] = 1;
+    }
+  } 
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {

@@ -50,15 +50,22 @@
 <div>
   <ng-template #schEdit let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Edit button number {{ btnNumber }}</h4>
+      <h4 class="modal-title" id="modal-basic-title">Edit {{ dateNumber }} Schedule</h4>
+      <button class="btn btn-success" *ngIf="schStatus[dateRef] else schElse" (click)="schStat(dateRef)">Enabled</button>
+      <ng-template #schElse>
+        <button class="btn btn-danger" (click)="schStat(dateRef)">Disabled</button>
+      </ng-template>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label for="buttonName">Enter button name</label>
-        <input type="text" class="form-control" [(ngModel)]="buttonName" aria-describedby="buttonNameEntry">
+        <label>Start operation (24-hour)</label><br>
+        <input #timeSlider type="range" class="form-range" min="0" max="2300" step="100" (click)="dataChange(timeSlider.value)" style="width:100%">
+        <input type="text" class="form-control" [(ngModel)]="timeStartVal" placeholder="2300"><hr>
+        <label>Duration (minutes)</label>
+        <input type="text" class="form-control" [(ngModel)]="durationValueVal" placeholder="10">
       </div>
     </div>
     <div class="modal-footer">
